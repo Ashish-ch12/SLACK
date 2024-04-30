@@ -14,8 +14,17 @@ pipeline {
 		   steps {
 		sh 'cp target/SLACK.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
 			}}
-		stage( 'Slack' ) {
-		   steps {  
-                         slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'slack12', color: 'good', message: 'welcome to jenkins', teamDomain: 'ashish-vrg5114'
-}}	
-}}
+		
+                   stage('Slack Notification') {
+            steps {  
+                slackSend(
+                    baseUrl: 'https://hooks.slack.com/services/',
+                    channel: 'slack12',
+                    color: 'good',
+                    message: 'Welcome to Jenkins!',
+                    tokenCredentialId: '1bc0b855-a9c6-4803-9147-487b0d243958'
+                )
+            }
+        }
+    }
+}
