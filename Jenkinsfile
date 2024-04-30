@@ -16,6 +16,6 @@ pipeline {
 			}}
 		stage( 'Slack' ) {
 		   steps {  
-                         slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'slack12', color: 'good', message: 'welcome to jenkins', teamDomain: 'ashish-vrg5114', tokenCredentialId: '1bc0b855-a9c6-4803-9147-487b0d243958'
+                         slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'slack12', color: 'good', message: 'welcome to jenkins', teamDomain: 'ashish-vrg5114'
 }}	
 }}
